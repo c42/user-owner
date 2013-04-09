@@ -4,6 +4,7 @@ namespace :db do
   desc 'Add a cso_admin and a field_agent'
   task :users => :environment do
     organization = Organization.new(:name => "My Organization")
+    organization.org_type = Organization.types.first
 
     cso_admin = User.new(:name => "cso_admin",
                          :password => "cso_admin",
